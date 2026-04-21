@@ -2,18 +2,29 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="my portfolio">
     <title>Моя первая страница</title>
-    <link rel = "stylesheet" href = "styles.css">
+    <link rel = "stylesheet" href = "outlines.css">
 </head>
 <body>
+    <header>
+        <img src = "img/skill=figma.png">
+        <nav>
+            <p>
+                <a href = "#about" style="margin-right: 50px;">Обо мне</a>
+                <a href = "#skills" style="margin-right: 50px;">Навыки</a>
+                <a href = "#interests" style="margin-right: 50px;">Интересы</a>
+                <a href = "#contacts" style="margin-right: 50px;">Контакты</a>
+        </p>
+        </nav>
+    </header>
     <main>
         <!-- Обо мне -->
-        <section id="about">
-            <h1>Сергей Константинов</h1>
+        <section>
+            <h1>Константин Волков</h1>
             <p>Программист</p>
 
-            <h2>Пара слов обо мне</h2>
+            <h2 id="about">Пара слов обо мне</h2>
             <p>Привет ✌</p>
             <p>
                 В данный момент я учусь в магистратуре МФ МГТУ им. Н. Э. Баумана
@@ -30,50 +41,57 @@
         </section>
 
         <!-- Навыки -->
-        <section id="skills">
-            <h2>Мои навыки</h2>
-            <p>Сортировать: <span>по названию</span> / <span>по уровню</span></p>
+        <section>
+            <h2 id="skills">Мои навыки</h2>
+            <p>Сортировать: <button>по названию</button> / <button>по уровню</button></p>
 
             <dl>
-                <dt>HTML</dt>
+                
+                <dt><img src = "img/skill=html.png">HTML</dt>
                 <dd>
                     <div style = "width: 40%;">40%</div>
                 </dd>
-                <dt>CSS</dt>
+                <img src = "img/Scale.png">
+                <dt><img src = "img/skill=css.png">CSS</dt>
                 <dd>
                     <div style = "width: 40%;">40%</div>
                 </dd>
-                <dt>Python</dt>
+                <img src = "img/Scale.png">
+                <dt><img src = "img/skill=python.png">Python</dt>
                 <dd>
                     <div style = "width: 40%;">40%</div>
                 </dd>
-                <dt>C++</dt>
+                <img src = "img/Scale.png">
+                <dt><img src = "img/skill=c++.png">C++</dt>
                 <dd>
                     <div style = "width: 40%;">40%</div>
+                    
                 </dd>
+                <img src = "img/Scale.png">
             </dl>
         </section>
 
         <!-- Интересы -->
-        <section id="interests">
-            <h2>Мои интересы</h2>
+        <section>
+            <h2 id="interests">Мои интересы</h2>
             <p>
                 Наибольший интерес для меня в данный момент представляет программирование и изучение искусственного интеллекта.
-                Но помимо учёбы и работы я также люблю играть на барабанах и читать зарубежную классику.
             </p>
+            <p>Но помимо учёбы и работы я также люблю играть на барабанах и читать зарубежную классику.</p>
         </section>
 
         <!-- Контакты -->
         <footer>
-        <section id="contacts">
-            <h2>Мои контакты</h2>
-            <p>
+            <h2 id = "contacts">Мои контакты</h2>
+            
+                <span style="margin-right: 50px;"><img src = "img/Vector.png">
                 Телефон: <a href="tel:+79991234567">+7 999 123-45-67</a>
-            </p>
-            <p>
+                </span>
+                <span><img src = "img/Vector (1).png">
                 Email: <a href="mailto:email@mail.ru">email@mail.ru</a>
-            </p>
-        </section>
+                </span>
+            
+        
         </footer>
     </main>
 </body>
