@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="my portfolio">
     <title>Моя первая страница</title>
-    <link rel = "stylesheet" href = "css/outlines.css">
+    <link rel = "stylesheet" href = "outlines.css">
 </head>
 <body>
     <header>
@@ -20,11 +20,11 @@
     </header>
     <main>
         <!-- Обо мне -->
-        <section>
+        <section id="about">
             <h1>Константин Волков</h1>
             <p>Программист</p>
 
-            <h2 id="about">Пара слов обо мне</h2>
+            <h2>Пара слов обо мне</h2>
             <p>Привет ✌</p>
             <p>
                 В данный момент я учусь в магистратуре МФ МГТУ им. Н. Э. Баумана
@@ -41,8 +41,8 @@
         </section>
 
         <!-- Навыки -->
-        <section>
-            <h2 id="skills">Мои навыки</h2>
+        <section id="skills">
+            <h2>Мои навыки</h2>
             <p>Сортировать: <button>по названию</button> / <button>по уровню</button></p>
 
             <dl>
@@ -72,8 +72,8 @@
         </section>
 
         <!-- Интересы -->
-        <section>
-            <h2 id="interests">Мои интересы</h2>
+        <section id="interests">
+            <h2>Мои интересы</h2>
             <p>
                 Наибольший интерес для меня в данный момент представляет программирование и изучение искусственного интеллекта.
             </p>
@@ -81,18 +81,23 @@
         </section>
 
         <!-- Контакты -->
-        <footer>
-            <h2 id = "contacts">Мои контакты</h2>
+        
+    </main>
+    <footer id = "contacts">
+            <h2>Мои контакты</h2>
             
                 <span style="margin-right: 50px;"><img src = "img/Vector.png" alt = "image">
-                Телефон: <a href="tel:+79991234567">+7 999 123-45-67</a>
+                <ul>
+                    <li>Телефон: <a href="tel:+79991234567">+7 999 123-45-67</a></li>
+                </ul>
                 </span>
                 <span><img src = "img/Vector (1).png" alt = "image">
-                Email: <a href="mailto:email@mail.ru">email@mail.ru</a>
+                <ul>
+                    <li>Email: <a href="mailto:email@mail.ru">email@mail.ru</a></li>
+                </ul>
                 </span>
             
         
         </footer>
-    </main>
 </body>
 </html>
