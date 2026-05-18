@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="description" content="my portfolio">
     <title>Моя первая страница</title>
-    <link rel = "stylesheet" href = "css/outlines.css">
+    <link rel = "stylesheet" href = "css/normalize.css">
+    <link rel = "stylesheet" href = "css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <img src = "img/main-logo.svg" alt = "image" width="60" height="60">
+    <header class="main-header">
+        <img src = "img/main-logo.svg" alt = "image" width="60" height="60" class=".profile-photo">
         <nav>
                 <a href = "#about" >Обо мне</a>
                 <a href = "#skills" >Навыки</a>
@@ -94,8 +98,10 @@
                 </ul>
     </section>
     </main>
-    <footer>
-           <p>Константин Волков</p> 
+    <footer class="main-footer">
+        <div class="container">
+           <p>Константин Волков</p>
+        </div> 
     </footer>
 </body>
 </html>
