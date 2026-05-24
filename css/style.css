@@ -103,22 +103,22 @@ button {
 
 
 .skill-item_html {
-    background-image: url("img/html.svg");
+    background-image: url("img/skill=html.svg");
 }
 
 
 .skill-item_css {
-    background-image: url("img/css.svg");
+    background-image: url("img/skill=css.svg");
 }
 
 
 .skill-item_cpp {
-    background-image: url("img/c++.svg");
+    background-image: url("img/skill=c++.svg");
 }
 
 
 .skill-item_python {
-    background-image: url("img/python.svg");
+    background-image: url("img/skill=python.svg");
 }
 .profile-photo {
     width: 150px;
