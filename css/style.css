@@ -121,3 +121,18 @@ button {
     object-fit: cover; /* Сохраняет пропорции */
     border: 3px solid var(--blue); /* Опционально: рамка */
 }
+.contact_github{
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-image: url("../img/social=github.svg");
+}
+.contact_vk{
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-image: url("../img/social=vk.svg");
+}
+.contact_telegram{
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-image: url("../img/social=telegram.svg");
+}
