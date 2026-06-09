@@ -151,3 +151,47 @@ button {
     background-repeat: no-repeat;
     background-image: url("../img/social=telegram.svg");
 }
+/* =========================================
+   СТИЛИ ДЛЯ КНОПОК (Сортировка и общие)
+   ========================================= */
+
+/* Базовый стиль для всех кнопок и элементов с классом .sort-btn */
+button,
+.sort-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--blue);
+  background-color: transparent;
+  border: 2px solid var(--blue);
+  border-radius: 25px; /* Делает кнопку овальной (pill shape) */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Плавное изменение цвета и фона */
+  text-align: center;
+  text-decoration: none;
+  margin: 0 5px 10px; /* Небольшие отступы, чтобы кнопки не слипались */
+}
+
+/* Состояние при наведении курсора */
+button:hover,
+.sort-btn:hover {
+  background-color: var(--blue);
+  color: var(--bg-color); /* Белый текст на синем фоне */
+}
+
+/* Активное состояние (например, когда фильтр "по уровню" выбран) */
+button:active,
+.sort-btn.active {
+  background-color: var(--yellow);
+  border-color: var(--yellow);
+  color: var(--txt-color); /* Темный текст на желтом фоне для контраста */
+}
+
+/* Убираем стандартную обводку при фокусе с клавиатуры и заменяем на красивую */
+button:focus-visible,
+.sort-btn:focus-visible {
+  outline: 2px dashed var(--yellow);
+  outline-offset: 4px;
+}
