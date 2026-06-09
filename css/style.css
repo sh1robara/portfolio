@@ -3,6 +3,22 @@
 *::after{
     box-sizing: border-box;
 }
+/* Убираем подчеркивание у всех ссылок */
+a {
+  text-decoration: none;
+  color: var(--txt-color); /* Цвет текста ссылки */
+  transition: color 0.3s ease; /* Плавное изменение цвета при наведении */
+}
+
+/* Опционально: меняем цвет при наведении, чтобы пользователь понимал, что это ссылка */
+a:hover {
+  color: var(--yellow);
+}
+
+/* Если нужно убрать подчеркивание ТОЛЬКО в меню навигации, используйте этот селектор: */
+.nav-list a {
+  text-decoration: none;
+}
 body{
     letter-spacing: 0%;
     font-family: "Open Sans", "Arial", sans-serif;
