@@ -135,7 +135,6 @@ button {
     height: 150px;
     border-radius: 50%; /* Делает изображение круглым */
     object-fit: cover; /* Сохраняет пропорции */
-    border: 3px solid var(--blue); /* Опционально: рамка */
 }
 .contact_github{
     box-sizing: border-box;
