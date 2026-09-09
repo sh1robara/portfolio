@@ -12,7 +12,7 @@ a {
 
 /* Опционально: меняем цвет при наведении, чтобы пользователь понимал, что это ссылка */
 a:hover {
-  color: var(--yellow);
+  color: var(--green);
 }
 
 /* Если нужно убрать подчеркивание ТОЛЬКО в меню навигации, используйте этот селектор: */
@@ -33,6 +33,7 @@ body{
     --yellow: #E5BB33;
     --blue: #205B75;
     --bg-color: #FFFFFF;
+    --green: #2d9b83
 }
 footer{
     color: var(--bg-color);
@@ -137,18 +138,51 @@ button {
     object-fit: cover; /* Сохраняет пропорции */
 }
 .contact_github{
-    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--blue); /* обводка по умолчанию */
+    background-color: var(--bg-color);
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
+    transition: all 0.3s ease;
+    margin: 0 10px;
     background-image: url("../img/social=github.svg");
 }
 .contact_vk{
-    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--blue); /* обводка по умолчанию */
+    background-color: var(--bg-color);
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
+    transition: all 0.3s ease;
+    margin: 0 10px;
     background-image: url("../img/social=vk.svg");
 }
 .contact_telegram{
-    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+     height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--blue); /* обводка по умолчанию */
+    background-color: var(--bg-color);
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
+    transition: all 0.3s ease;
+    margin: 0 10px;
     background-image: url("../img/social=telegram.svg");
 }
 /* =========================================
@@ -194,4 +228,17 @@ button:focus-visible,
 .sort-btn:focus-visible {
   outline: 2px dashed var(--yellow);
   outline-offset: 4px;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact_github:hover,
+.contact_vk:hover,
+.contact_telegram:hover {
+  background-color: var(--blue);
+  border-color: var(--blue);
 }
