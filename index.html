@@ -1,104 +1,139 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="my portfolio">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Моя первая страница</title>
-    <link rel = "stylesheet" href = "css/normalize.css">
-    <link rel = "stylesheet" href = "css/style.css">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="container">
-    <header class="main-header">
-        <img src = "img/main-logo.svg" alt = "image" width="60" height="60" class=".profile-photo">
-        <nav>
-                <a href = "#about" >Обо мне</a>
-                <a href = "#skills" >Навыки</a>
-                <a href = "#interests" >Интересы</a>
-                <a href = "#contacts" >Контакты</a>
-        </nav>
-    </header>
-    <main>
-        <!-- Обо мне -->
-        <section id="about" class="about_me">
-            <h1>Константин Волков</h1>
-            <p>Программист</p>
-            <img src = "img/IMG_20250805_220910.jpg" alt="pfp" width="400" height="400" class="profile-photo">
-            <h2>Пара слов обо мне</h2>
-            <p>Привет ✌</p>
-            <p>
-                В данный момент я учусь в МФ МГТУ им. Н. Э. Баумана
-                по направлению «Программная инженерия».
-            </p>
-            <p>
-                На данный момент у меня нету опыта работы.
-            </p>
-        </section>
 
-        <!-- Навыки -->
-        <section id="skills" class="skills">
-            <h2>Мои навыки</h2>
-            <p>Сортировать: <button>по названию</button>  <button>по уровню</button></p>
+        <header class="main-header">
+            <img
+                src="img/main-logo.svg"
+                alt="Логотип"
+                width="60"
+                height="60"
+                class="profile-photo"
+            >
 
-            <dl class="skill-list">
-                
-                <dt class="skill-item_html skill-item">HTML</dt>
-                <dd class="skill-level">
-                    <div style = "width: 40%;">40%</div>
-                </dd>
-                
-                <dt class="skill-item_css skill-item">CSS</dt>
-                <dd class="skill-level">
-                    <div style = "width: 40%;">40%</div>
-                </dd>
-                
-                <dt class="skill-item_python skill-item">Python</dt>
-                <dd class="skill-level">
-                    <div style = "width: 40%;">40%</div>
-                </dd>
-                
-                <dt class="skill-item_cpp skill-item">C++</dt>
-                <dd class="skill-level">
-                    <div style = "width: 40%;">40%</div>
-                    
-                </dd>
-                
-            </dl>
-        </section>
+            <nav>
+                <a href="#about">Обо мне</a>
+                <a href="#skills">Навыки</a>
+                <a href="#interests">Интересы</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+        </header>
 
-        <!-- Интересы -->
-        <section id="interests">
-            <h2>Мои интересы</h2>
-            <p>
-                Занимаюсь спортом. Хожу в зал и играю в баскетбол.
-                В свободное время смотрю аниме и играю в компьютерные игры.
-            </p>
-        </section>
+        <main>
 
-        <!-- Контакты -->
-        <section id="contacts">
-            <h2>Мои контакты</h2>
-            
-                
+            <!-- Обо мне -->
+            <section id="about" class="about_me">
+                <h1>Константин Волков</h1>
+                <p>Программист</p>
+
+                <img
+                    src="img/IMG_20250805_220910.jpg"
+                    alt="Фото профиля"
+                    width="400"
+                    height="400"
+                    class="profile-photo"
+                >
+
+                <h2>Пара слов обо мне</h2>
+
+                <p>Привет ✌</p>
+
+                <p>
+                    В данный момент я учусь в МФ МГТУ
+                    им. Н. Э. Баумана по направлению
+                    «Программная инженерия».
+                </p>
+
+                <p>
+                    На данный момент у меня нету опыта работы.
+                </p>
+            </section>
+
+            <!-- Навыки -->
+            <section id="skills" class="skills">
+                <h2>Мои навыки</h2>
+
+                <p>
+                    Сортировать:
+                    <button type="button" id="sort-name">
+                        по названию
+                    </button>
+
+                    <button type="button" id="sort-level">
+                        по уровню
+                    </button>
+                </p>
+
+                <!-- Список создаётся через JavaScript -->
+                <dl class="skill-list"></dl>
+            </section>
+
+            <!-- Интересы -->
+            <section id="interests">
+                <h2>Мои интересы</h2>
+
+                <p>
+                    Занимаюсь спортом. Хожу в зал
+                    и играю в баскетбол.
+                    В свободное время смотрю аниме
+                    и играю в компьютерные игры.
+                </p>
+            </section>
+
+            <!-- Контакты -->
+            <section id="contacts">
+                <h2>Мои контакты</h2>
+
                 <ul>
-                    <li>Телефон: <a href="tel:+79991234567">+7 999 123-45-67</a></li>
-                    <li>Email: <a href="mailto:email@mail.ru">email@mail.ru</a></li>
+                    <li>
+                        Телефон:
+                        <a href="tel:+79991234567">
+                            +7 999 123-45-67
+                        </a>
+                    </li>
+
+                    <li>
+                        Email:
+                        <a href="mailto:email@mail.ru">
+                            email@mail.ru
+                        </a>
+                    </li>
                 </ul>
+
                 <ul class="contact">
                     <li class="contact_vk"></li>
                     <li class="contact_telegram"></li>
                     <li class="contact_github"></li>
                 </ul>
-    </section>
-    </main>
-    <footer class="main-footer">
-        <div class="container">
-           <p>Константин Волков</p>
-        </div> 
-    </footer>
+            </section>
+
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <p>Константин Волков</p>
+            </div>
+        </footer>
+
     </div>
+
+    <!-- Подключение JavaScript перед закрывающим body -->
+    <script src="js/script.js"></script>
 </body>
 </html>
