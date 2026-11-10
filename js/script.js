@@ -1,9 +1,11 @@
 
 const skills = {
+
+    // Данные о навыках
     data: [
         {
             name: "HTML",
-            level: 40,
+            level: 70,
             icon: "skill=html.svg"
         },
         {
@@ -13,31 +15,35 @@ const skills = {
         },
         {
             name: "Python",
-            level: 40,
+            level: 50,
             icon: "skillpython.svg"
         },
         {
             name: "C++",
-            level: 40,
+            level: 10,
             icon: "skill=c++.svg"
         }
     ],
 
+    // Текущий режим сортировки
+    sortMode: null,
+
+    // Генерация списка навыков
     generateList(parentElement) {
-        parentElement.replaceChildren();
+
+        // Очищаем список перед генерацией
+        parentElement.innerHTML = "";
 
         this.data.forEach((skill) => {
 
             // Создаём название навыка
             const skillItem = document.createElement("dt");
 
-            // Добавляем CSS-класс
             skillItem.classList.add("skill-item");
 
-            // Добавляем название навыка
             skillItem.textContent = skill.name;
 
-            // Подключаем иконку через JavaScript
+            // Добавляем иконку через JavaScript
             skillItem.style.backgroundImage =
                 `url("img/${skill.icon}")`;
 
@@ -49,53 +55,116 @@ const skills = {
             // Создаём полоску прогресса
             const skillProgress = document.createElement("div");
 
-            // Устанавливаем ширину
             skillProgress.style.width = `${skill.level}%`;
 
-            // Добавляем текст с процентами
             skillProgress.textContent = `${skill.level}%`;
 
-            // Вкладываем полоску в уровень
+            // Добавляем полоску внутрь dd
             skillLevel.append(skillProgress);
 
-            // Добавляем элементы в список
+            // Добавляем элементы на страницу
             parentElement.append(skillItem, skillLevel);
+
         });
     },
 
-    sortByName(parentElement) {
-        this.data.sort((a, b) =>
-            a.name.localeCompare(b.name)
-        );
+    // Универсальный метод сортировки
+    sortList(type, parentElement) {
 
-        this.generateList(parentElement);
-    },
+        // Если выбран новый тип сортировки
+        if (this.sortMode !== type) {
 
-    sortByLevel(parentElement) {
-        this.data.sort((a, b) =>
-            b.level - a.level
-        );
+            this.data.sort(getComparer(type));
 
+            this.sortMode = type;
+
+            console.log(
+                `отсортировали данные по ${type}`
+            );
+
+        } else {
+
+            // Повторное нажатие на ту же кнопку
+            this.data.reverse();
+
+            console.log(
+                "инвертировали порядок сортировки"
+            );
+
+        }
+
+        // Перерисовываем список
         this.generateList(parentElement);
     }
 };
 
-// Получаем список со страницы
+
+// Функция сравнения объектов
+function getComparer(prop) {
+
+    return function(a, b) {
+
+        if (a[prop] < b[prop]) {
+            return -1;
+        }
+
+        if (a[prop] > b[prop]) {
+            return 1;
+        }
+
+        return 0;
+    };
+}
+
+
+// Получаем список навыков
 const skillList = document.querySelector("dl.skill-list");
 
-// Генерируем список навыков
+// Первоначальная генерация списка
 skills.generateList(skillList);
 
-// Получаем кнопки сортировки
-const sortNameButton = document.querySelector("#sort-name");
-const sortLevelButton = document.querySelector("#sort-level");
 
-// Сортировка по названию
-sortNameButton.addEventListener("click", () => {
-    skills.sortByName(skillList);
-});
+// Получаем блок с кнопками
+const sortBtnsBlock = document.querySelector(".skills-sort");
 
-// Сортировка по уровню
-sortLevelButton.addEventListener("click", () => {
-    skills.sortByLevel(skillList);
+
+// Делегирование событий
+sortBtnsBlock.addEventListener("click", (e) => {
+
+    const target = e.target;
+
+    // Проверяем, что нажата кнопка
+    if (target.nodeName === "BUTTON") {
+
+        // Определяем тип сортировки
+        switch (target.dataset.type) {
+
+            case "name":
+
+                skills.sortList("name", skillList);
+
+                break;
+
+            case "level":
+
+                skills.sortList("level", skillList);
+
+                break;
+
+            default:
+
+                console.log("неизвестная кнопка");
+
+        }
+
+        // Выделяем активную кнопку
+        const buttons = sortBtnsBlock.querySelectorAll("button");
+
+        buttons.forEach((button) => {
+            button.classList.remove("active");
+        });
+
+        target.classList.add("active");
+    }
+
 });
