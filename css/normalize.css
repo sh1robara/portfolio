@@ -1,114 +1,248 @@
 
+/* Переменные */
+
+:root {
+    --text-color: #222222;
+    --accent-color: #0BA69B;
+    --background-color: #FFFFFF;
+    --progress-color: #E5BB33;
+    --progress-border: #205B75;
+    --hover-color: #087F77;
+    --focus-color: #E5BB33;
+}
+
+/* Общие стили */
+
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-:root {
-    --txt-color: #031923;
-    --yellow: #E5BB33;
-    --blue: #205B75;
-    --bg-color: #FFFFFF;
-    --green: #2d9b83;
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: "Open Sans", "Arial", sans-serif;
+    margin: 0;
+
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: 20px;
     font-weight: 400;
-    line-height: 30px;
-    color: var(--txt-color);
-    background-color: var(--bg-color);
-}
+    line-height: 1.5;
 
-a {
-    text-decoration: none;
-    color: var(--txt-color);
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--green);
+    color: var(--text-color);
+    background-color: var(--background-color);
 }
 
 .container {
-    min-width: 320px;
+    width: 100%;
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Шапка сайта */
+/* Заголовки */
+
+h1 {
+    margin: 0 0 20px;
+
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+h2 {
+    margin: 0 0 25px;
+
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+p {
+    margin: 0 0 15px;
+    line-height: 1.5;
+}
+
+/* Ссылки */
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--hover-color);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 4px;
+}
+
+/* Шапка */
 
 .main-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+    width: 100%;
     padding: 20px 0;
+
+    background-color: var(--background-color);
 }
 
-.main-header nav {
+.header-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
 }
 
-/* Фото профиля */
-
-.profile-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.main-header .profile-photo {
+.main-logo {
+    display: block;
     width: 60px;
     height: 60px;
+    object-fit: contain;
 }
 
-/* Разделы */
+/* Меню */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.main-nav a {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
+
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    color: var(--accent-color);
+}
+
+.main-nav a:active {
+    color: var(--hover-color);
+}
+
+/* Основная часть */
+
+.main-content {
+    padding: 50px 0;
+}
 
 section {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
-/* Кнопки */
+/* Обо мне */
 
-button {
-    display: inline-block;
-    padding: 10px 24px;
-    margin: 0 5px 10px;
+.about-me {
+    max-width: 900px;
+}
 
-    font-family: "Open Sans", "Arial", sans-serif;
-    font-size: 16px;
-    font-weight: 600;
+.profession {
+    margin-bottom: 30px;
 
-    color: var(--blue);
-    background-color: transparent;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1.2;
 
-    border: 2px solid var(--blue);
-    border-radius: 25px;
+    color: var(--accent-color);
+}
+
+.profile-photo {
+    display: block;
+
+    width: 150px;
+    height: 150px;
+    margin: 0 0 35px;
+
+    border: none;
+    border-radius: 50%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Навыки */
+
+.skills {
+    width: 100%;
+}
+
+/* Блок сортировки */
+
+.skills-sort {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+.skills-sort span {
+    font-size: 20px;
+    line-height: 1;
+}
+
+/* Кнопки сортировки */
+
+.sort-btn {
+    padding: 6px 10px 10px 10px;
+
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
+
+    color: var(--accent-color);
+    background-color: var(--background-color);
+
+    border: 2px solid var(--accent-color);
+    border-radius: 0;
 
     cursor: pointer;
-    transition: all 0.3s ease;
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
 }
 
-button:hover {
-    background-color: var(--blue);
-    color: var(--bg-color);
+.sort-btn:hover {
+    color: var(--background-color);
+    background-color: var(--accent-color);
 }
 
-button:active {
-    background-color: var(--yellow);
-    border-color: var(--yellow);
-    color: var(--txt-color);
+.sort-btn:active {
+    color: var(--background-color);
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
 }
 
-button:focus-visible {
-    outline: 2px dashed var(--yellow);
+.sort-btn.active {
+    color: var(--background-color);
+    background-color: var(--accent-color);
+}
+
+.sort-btn:focus-visible {
+    outline: 2px solid var(--focus-color);
     outline-offset: 4px;
 }
 
@@ -120,124 +254,241 @@ button:focus-visible {
     line-height: 1;
 }
 
-/* Название навыка */
-
-.skill-list dt {
-    margin-bottom: 6px;
+.skill-item {
+    margin-bottom: 8px;
     padding: 5px 0 5px 38px;
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
 
     background-position: left center;
     background-repeat: no-repeat;
     background-size: 30px;
 }
 
-/* Полоска уровня навыка */
-
 .skill-level {
-    margin: 4px 0 20px;
+    margin: 0 0 25px;
     padding: 2px;
 
-    font-size: 0;
-
-    border: 1px solid var(--blue);
+    border: 1px solid var(--progress-border);
     border-radius: 16px;
 }
 
 .skill-level div {
     height: 14px;
 
-    background-color: var(--yellow);
     border-radius: 8px;
+    background-color: var(--progress-color);
+
+    font-size: 0;
+    line-height: 1;
 }
 
-/* Названия навыков */
+/* Интересы */
 
-.skill-item {
-    text-transform: lowercase;
+.interests {
+    max-width: 900px;
 }
-
-/*
-    Иконки навыков больше не задаются в CSS.
-    Они подключаются в js/script.js
-    через style.backgroundImage.
-*/
 
 /* Контакты */
 
-.contact {
+.contact-list {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 30px;
+
+    margin: 0 0 25px;
     padding: 0;
-    margin: 20px 0;
+
     list-style: none;
 }
 
-.contact_github,
-.contact_vk,
-.contact_telegram {
+.contact-item {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Общий класс контактов */
+
+.contact-link {
     display: inline-flex;
     align-items: center;
+
+    min-height: 30px;
+    padding-left: 35px;
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+
+    color: var(--text-color);
+    text-decoration: none;
+
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 24px 24px;
+
+    transition: color 0.3s ease;
+}
+
+/* Иконка телефона */
+
+.contact-phone {
+    background-image: url("../img/icon=phone.svg");
+}
+
+/* Иконка почты */
+
+.contact-email {
+    background-image: url("../img/icon=email.svg");
+}
+
+/* Наведение на контакты */
+
+.contact-link:hover {
+    color: var(--accent-color);
+}
+
+.contact-link:active {
+    color: var(--hover-color);
+}
+
+.contact-link:focus-visible {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 4px;
+}
+
+/* Социальные сети */
+
+.social-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.social-list li {
+    list-style: none;
+}
+
+/* Общий класс иконок */
+
+.social-link {
+    display: inline-flex;
     justify-content: center;
+    align-items: center;
 
     width: 50px;
     height: 50px;
 
+    border: 2px solid var(--accent-color);
     border-radius: 50%;
-    border: 2px solid var(--blue);
 
-    background-color: var(--bg-color);
+    background-color: var(--background-color);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 24px;
+    background-size: 24px 24px;
 
-    transition: all 0.3s ease;
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease;
 }
 
-.contact_github {
-    background-image: url("../img/social=github.svg");
-}
+/* Иконка ВКонтакте */
 
-.contact_vk {
+.social-vk {
     background-image: url("../img/social=vk.svg");
 }
 
-.contact_telegram {
+/* Иконка Telegram */
+
+.social-telegram {
     background-image: url("../img/social=telegram.svg");
 }
 
-.contact_github:hover,
-.contact_vk:hover,
-.contact_telegram:hover {
-    background-color: var(--blue);
-    border-color: var(--blue);
+/* Иконка GitHub */
+
+.social-github {
+    background-image: url("../img/social=github.svg");
 }
 
-/* Подвал */
+/* Наведение на социальные сети */
 
-footer {
-    color: var(--bg-color);
-    background-color: var(--blue);
+.social-link:hover {
+    background-color: var(--accent-color);
 }
+
+.social-link:active {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+}
+
+.social-link:focus-visible {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 4px;
+}
+
+/* Футер */
 
 .main-footer {
-    padding: 20px 0;
+    width: 100%;
+    padding: 30px 0;
+
+    color: var(--background-color);
+    background-color: var(--text-color);
 }
 
-/* Адаптация под телефон */
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-@media (max-width: 600px) {
-    .main-header {
+.main-footer p {
+    margin: 0;
+}
+
+/* Адаптивность */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 38px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .profession {
+        font-size: 28px;
+    }
+
+    .header-container {
         flex-direction: column;
-        align-items: flex-start;
     }
 
-    .main-header nav {
-        gap: 12px;
+    .main-nav {
+        justify-content: center;
+        gap: 15px;
     }
 
-    body {
+    .main-content {
+        padding: 30px 0;
+    }
+
+    .sort-btn {
         font-size: 16px;
-        line-height: 26px;
+    }
+
+    .contact-list {
+        gap: 20px;
     }
 }

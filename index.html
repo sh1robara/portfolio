@@ -12,25 +12,30 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
+    <!-- Шапка сайта -->
     <header class="main-header">
         <div class="container header-container">
 
             <img
+                class="main-logo"
                 src="img/main-logo.svg"
                 alt="Логотип"
-                class="main-logo"
                 width="60"
                 height="60"
             >
 
-            <nav class="main-nav">
+            <nav class="main-nav" aria-label="Основное меню">
                 <a href="#about">Обо мне</a>
                 <a href="#skills">Навыки</a>
                 <a href="#interests">Интересы</a>
@@ -40,6 +45,7 @@
         </div>
     </header>
 
+    <!-- Основное содержимое -->
     <main class="main-content">
         <div class="container">
 
@@ -51,9 +57,9 @@
                 <p class="profession">Программист</p>
 
                 <img
+                    class="profile-photo"
                     src="img/IMG_20250805_220910.jpg"
                     alt="Фото Константина Волкова"
-                    class="profile-photo"
                     width="150"
                     height="150"
                 >
@@ -69,7 +75,7 @@
                 </p>
 
                 <p>
-                    На данный момент у меня нету опыта работы.
+                    На данный момент у меня нет опыта работы.
                 </p>
 
             </section>
@@ -101,7 +107,7 @@
 
                 </div>
 
-                <!-- Список генерируется JavaScript -->
+                <!-- Заполняется через JavaScript -->
                 <dl class="skill-list"></dl>
 
             </section>
@@ -125,30 +131,38 @@
 
                 <h2>Мои контакты</h2>
 
+                <!-- Телефон и почта с CSS-иконками -->
                 <ul class="contact-list">
 
-                    <li>
-                        Телефон:
-                        <a href="tel:+79991234567">
+                    <li class="contact-item">
+                        <a
+                            class="contact-link contact-phone"
+                            href="tel:+79991234567"
+                        >
                             +7 999 123-45-67
                         </a>
                     </li>
 
-                    <li>
-                        Email:
-                        <a href="mailto:email@mail.ru">
+                    <li class="contact-item">
+                        <a
+                            class="contact-link contact-email"
+                            href="mailto:email@mail.ru"
+                        >
                             email@mail.ru
                         </a>
                     </li>
 
                 </ul>
 
+                <!-- Социальные сети -->
                 <ul class="social-list">
 
                     <li>
                         <a
                             class="social-link social-vk"
                             href="https://vk.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             aria-label="ВКонтакте"
                         ></a>
                     </li>
@@ -157,6 +171,8 @@
                         <a
                             class="social-link social-telegram"
                             href="https://t.me/"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             aria-label="Telegram"
                         ></a>
                     </li>
@@ -165,6 +181,8 @@
                         <a
                             class="social-link social-github"
                             href="https://github.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             aria-label="GitHub"
                         ></a>
                     </li>
@@ -176,6 +194,7 @@
         </div>
     </main>
 
+    <!-- Футер вне внешнего container -->
     <footer class="main-footer">
         <div class="container footer-container">
             <p>Константин Волков</p>
