@@ -1,5 +1,5 @@
 
-/* Общие настройки */
+/* Переменные */
 
 :root {
     --text-color: #222222;
@@ -10,6 +10,8 @@
     --hover-color: #087F77;
     --focus-color: #E5BB33;
 }
+
+/* Общие стили */
 
 *,
 *::before,
@@ -23,15 +25,15 @@ html {
 
 body {
     margin: 0;
+
     font-family: "Open Sans", Arial, sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: 1.5;
+
     color: var(--text-color);
     background-color: var(--background-color);
 }
-
-/* Контейнер */
 
 .container {
     width: 100%;
@@ -44,6 +46,7 @@ body {
 
 h1 {
     margin: 0 0 20px;
+
     font-size: 60px;
     font-weight: 700;
     line-height: 1.1;
@@ -51,6 +54,7 @@ h1 {
 
 h2 {
     margin: 0 0 25px;
+
     font-size: 30px;
     font-weight: 700;
     line-height: 1.2;
@@ -72,15 +76,12 @@ p {
 a {
     color: var(--accent-color);
     text-decoration: none;
+
     transition: color 0.3s ease;
 }
 
 a:hover {
     color: var(--hover-color);
-}
-
-a:active {
-    color: var(--text-color);
 }
 
 a:focus-visible {
@@ -93,6 +94,7 @@ a:focus-visible {
 .main-header {
     width: 100%;
     padding: 20px 0;
+
     background-color: var(--background-color);
 }
 
@@ -108,11 +110,13 @@ a:focus-visible {
     width: 60px;
     height: 60px;
     object-fit: contain;
-    border: none;
 }
+
+/* Меню */
 
 .main-nav {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     gap: 30px;
 }
@@ -121,14 +125,20 @@ a:focus-visible {
     font-size: 20px;
     font-weight: 400;
     line-height: 1;
+
     color: var(--text-color);
+    text-decoration: none;
 }
 
 .main-nav a:hover {
     color: var(--accent-color);
 }
 
-/* Основное содержимое */
+.main-nav a:active {
+    color: var(--hover-color);
+}
+
+/* Основная часть */
 
 .main-content {
     padding: 50px 0;
@@ -146,16 +156,18 @@ section {
 
 .profession {
     margin-bottom: 30px;
+
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: 38px;
     font-weight: 400;
     line-height: 1.2;
+
     color: var(--accent-color);
 }
 
-/* Фото 150x150 без обводки */
-
 .profile-photo {
     display: block;
+
     width: 150px;
     height: 150px;
     margin: 0 0 35px;
@@ -173,11 +185,14 @@ section {
     width: 100%;
 }
 
+/* Блок сортировки */
+
 .skills-sort {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 15px;
+
     margin-bottom: 30px;
 }
 
@@ -186,12 +201,12 @@ section {
     line-height: 1;
 }
 
-/* Кнопки */
+/* Кнопки сортировки */
 
 .sort-btn {
-    padding: 10px 24px;
+    padding: 6px 10px 10px 10px;
 
-    font-family: inherit;
+    font-family: "Open Sans", Arial, sans-serif;
     font-size: 20px;
     font-weight: 400;
     line-height: 1;
@@ -200,10 +215,14 @@ section {
     background-color: var(--background-color);
 
     border: 2px solid var(--accent-color);
-    border-radius: 10px;
+    border-radius: 0;
 
     cursor: pointer;
-    transition: all 0.3s ease;
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
 }
 
 .sort-btn:hover {
@@ -217,14 +236,14 @@ section {
     border-color: var(--hover-color);
 }
 
-.sort-btn:focus-visible {
-    outline: 2px solid var(--focus-color);
-    outline-offset: 4px;
-}
-
 .sort-btn.active {
     color: var(--background-color);
     background-color: var(--accent-color);
+}
+
+.sort-btn:focus-visible {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 4px;
 }
 
 /* Список навыков */
@@ -248,8 +267,6 @@ section {
     background-size: 30px;
 }
 
-/* Уровень навыка */
-
 .skill-level {
     margin: 0 0 25px;
     padding: 2px;
@@ -260,6 +277,7 @@ section {
 
 .skill-level div {
     height: 14px;
+
     border-radius: 8px;
     background-color: var(--progress-color);
 
@@ -267,32 +285,80 @@ section {
     line-height: 1;
 }
 
-/*
-Иконки навыков подключаются
-через JavaScript, а не через CSS.
-*/
-
 /* Интересы */
 
 .interests {
     max-width: 900px;
 }
 
-/* Контакты без буллитов */
+/* Контакты */
 
 .contact-list {
     display: flex;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 30px;
+
     margin: 0 0 25px;
+    padding: 0;
+
+    list-style: none;
+}
+
+.contact-item {
+    margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.contact-list li {
-    margin: 0;
-    list-style: none;
+/* Общий класс контактов */
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 30px;
+    padding-left: 35px;
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+
+    color: var(--text-color);
+    text-decoration: none;
+
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 24px 24px;
+
+    transition: color 0.3s ease;
+}
+
+/* Иконка телефона */
+
+.contact-phone {
+    background-image: url("../img/icon=phone.svg");
+}
+
+/* Иконка почты */
+
+.contact-email {
+    background-image: url("../img/icon=email.svg");
+}
+
+/* Наведение на контакты */
+
+.contact-link:hover {
+    color: var(--accent-color);
+}
+
+.contact-link:active {
+    color: var(--hover-color);
+}
+
+.contact-link:focus-visible {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 4px;
 }
 
 /* Социальные сети */
@@ -313,6 +379,8 @@ section {
     list-style: none;
 }
 
+/* Общий класс иконок */
+
 .social-link {
     display: inline-flex;
     justify-content: center;
@@ -327,12 +395,32 @@ section {
     background-color: var(--background-color);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 24px;
+    background-size: 24px 24px;
 
     transition:
         background-color 0.3s ease,
         border-color 0.3s ease;
 }
+
+/* Иконка ВКонтакте */
+
+.social-vk {
+    background-image: url("../img/social=vk.svg");
+}
+
+/* Иконка Telegram */
+
+.social-telegram {
+    background-image: url("../img/social=telegram.svg");
+}
+
+/* Иконка GitHub */
+
+.social-github {
+    background-image: url("../img/social=github.svg");
+}
+
+/* Наведение на социальные сети */
 
 .social-link:hover {
     background-color: var(--accent-color);
@@ -348,23 +436,12 @@ section {
     outline-offset: 4px;
 }
 
-.social-vk {
-    background-image: url("../img/social=vk.svg");
-}
-
-.social-telegram {
-    background-image: url("../img/social=telegram.svg");
-}
-
-.social-github {
-    background-image: url("../img/social=github.svg");
-}
-
-/* Подвал на всю ширину */
+/* Футер */
 
 .main-footer {
     width: 100%;
     padding: 30px 0;
+
     color: var(--background-color);
     background-color: var(--text-color);
 }
@@ -382,7 +459,6 @@ section {
 /* Адаптивность */
 
 @media (max-width: 768px) {
-
     h1 {
         font-size: 38px;
     }
@@ -408,11 +484,11 @@ section {
         padding: 30px 0;
     }
 
-    .skills-sort {
-        align-items: flex-start;
-    }
-
     .sort-btn {
         font-size: 16px;
+    }
+
+    .contact-list {
+        gap: 20px;
     }
 }
