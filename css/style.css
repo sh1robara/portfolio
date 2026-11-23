@@ -449,11 +449,12 @@ section {
 .footer-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .main-footer p {
     margin: 0;
+    text-align: left;
 }
 
 /* Адаптивность */
